@@ -4,22 +4,22 @@ from fastapi.testclient import TestClient
 # pytest test_user.py
 client = TestClient(app)
 
-# Test: Comprueba que el endpoint "/users/2" devuelve código 200 y el Usuario correspondiente
+# Test: Comprueba que el endpoint "/users/1" devuelve código 200 y el Usuario correspondiente
 def test_get_user_by_id():
     # Arrange
     status = 200
     user = {
-        "id": 2,
-        "name": "Vamos",
-        "last_name": "string",
-        "login": "string",
-        "status": "string",
+        "id": 1,
+        "name": "Manuel",
+        "last_name": "Ramírez",
+        "login": "Manu75",
+        "status": "Activo",
         "created_at": "2023-08-22T22:30:46",
-        "updated_at": "2023-08-22T23:42:59"
+        "updated_at": "2023-08-24T21:52:41"
     }
 
     # Act
-    response = client.get("/users/2")
+    response = client.get("/users/1")
 
     # Assert
     assert response.status_code == status
